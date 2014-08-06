@@ -26,7 +26,7 @@ void setup() {
   }
 //  Serial.setTimeout(10000);
   Serial.println("Trigger Emulator V0.1"); 
-  Serial.println("Type a trigger frequency in Hz (integer value 1-2000) or 0 to stop pulsing");  
+  Serial.println("Type a trigger frequency in Hz (integer value 1-5000) or 0 to stop pulsing");  
   // initialize the digital pin as an output.
   pinMode(trigger, OUTPUT);  
   digitalWrite(trigger, HIGH);  
@@ -44,7 +44,7 @@ void loop() {
     //Serial.println(" waiting for input");
     // sentence:
     int val = Serial.parseInt(); 
-    val=constrain(val,0,2000); //constrain value up to 500Hz
+    val=constrain(val,0,5000); //constrain value up to 500Hz
     freq=val;
     if (val>0)
     {
